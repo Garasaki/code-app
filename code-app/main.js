@@ -1,4 +1,17 @@
 import './style.css'
+import Split from 'split-grid'
+
+Split({
+  columnGutters: [{
+      track: 1,
+      element: document.querySelector('.vertical-gutter'),
+  }],
+  rowGutters: [{
+      track: 1,
+      element: document.querySelector('.horizontal-gutter'),
+  }]
+})
+
 
 const $ = selector => document.querySelector(selector)
 
@@ -8,10 +21,9 @@ const $js = $('#js')
 const $css = $('#css')
 const $html = $('#html')
 
-$js.addEventListener('input', update) // update when js changes
-$css.addEventListener('input', update) // update when css changes
-$html.addEventListener('input', update) // update when html changes
-
+$js.addEventListener('input', update)
+$css.addEventListener('input', update)
+$html.addEventListener('input', update)
 
 function update () {
   const html = createHtml()
@@ -29,7 +41,7 @@ const createHtml = () => {
     <head>
       <style>
         ${css}
-      <style>
+      </style>
     </head>
     <body>
       <script>
