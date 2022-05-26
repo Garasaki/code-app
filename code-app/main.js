@@ -13,13 +13,12 @@ $css.addEventListener('input', update) // update when css changes
 $html.addEventListener('input', update) // update when html changes
 
 
-
 function update () {
-  const html  = createHhtml()
+  const html = createHtml()
   $('iframe').setAttribute('srcdoc', html)
 }
 
-const createHhtml = () => {
+const createHtml = () => {
   const html = $html.value
   const css = $css.value
   const js = $js.value
@@ -32,7 +31,6 @@ const createHhtml = () => {
         ${css}
       <style>
     </head>
-
     <body>
       <script>
       ${js}  
